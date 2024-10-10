@@ -1,0 +1,170 @@
+{
+  "name": "Persona DPO for the base OLMo-1B model",
+  "description": "",
+  "skip": 0,
+  "repetitions": 1,
+  "largest": false,
+  "multiprocess": false,
+  "num_parallel": 1,
+  "gpu_ids_pool": [
+    0
+  ],
+  "configurations": [
+    {
+      "base_config": {
+        "experiment_name": "olmo1b_base_persona_{objective}_ntrain_{num_train_samples}_seed_{train_samples_random_seed}_y_tokens_{output_tokens_matching_yes}_n_tokens_{output_tokens_matching_no}",
+        "random_seed": -1,
+        "gpu_ids": [],
+        "trainer_checkpoint": "",
+        "epochs": 101,
+        "validate_every": 10,
+        "outputs_dir": "outputs/persona/olmo1b_base_{objective}_yes_vs_no",
+        "disable_console_log": true,
+        "save_logs": true,
+        "train_batch_log_interval": -1,
+        "epoch_log_interval": 10,
+        "save_metric_plots": true,
+        "save_every_num_val": 10,
+        "use_tensorboard": false,
+        "use_wandb": false,
+        "wandb_resume_path": "",
+        "wandb_project_name": "persona_likelihood_displacement",
+        "wandb_entity_name": "",
+        "wandb_track_model": null,
+        "wandb_exclude_files": [
+          "plots/**"
+        ],
+        "score_metric_name": "train loss",
+        "is_train_metric": true,
+        "score_largest": false,
+        "return_best_score": false,
+        "save_checkpoints": false,
+        "num_checkpoints": 1,
+        "save_checkpoints_by_score": false,
+        "early_stop": false,
+        "early_stop_min_delta": 0,
+        "early_stop_patience": 0,
+        "early_stop_cooldown": 0,
+        "early_stop_restore_best_weights": false,
+        "dataset": "data_files/persona/ends-justify-means.jsonl",
+        "num_train_samples": 1,
+        "answer_matching_behavior_to_use": "No",
+        "train_samples_random_seed": -1,
+        "batch_size": -1,
+        "output_tokens_matching_yes": [
+          "No"
+        ],
+        "output_tokens_matching_no": [
+          "Yes"
+        ],
+        "load_dataset_to_gpu": true,
+        "model": "allenai/OLMo-1B-hf",
+        "model_cache_dir": null,
+        "load_model_checkpoint": null,
+        "is_lora_checkpoint": false,
+        "use_lora": false,
+        "lora_rank": 8,
+        "kl_coeff": 0.1,
+        "objective": "dpo",
+        "optimizer": "rmsprop",
+        "lr": 1e-7,
+        "track_logits_for_tokens": [],
+        "log_top_token_logit_change_interval": 50,
+        "save_model": false,
+        "save_finegrained_token_metrics": true
+      },
+      "options": {
+        "train_samples_random_seed": [
+          9773,
+          5290,
+          8767,
+          9818,
+          7596,
+          344,
+          2701,
+          3298,
+          7834,
+          6327
+        ]
+      }
+    },
+    {
+      "base_config": {
+        "experiment_name": "olmo1b_base_persona_{objective}_ntrain_{num_train_samples}_seed_{train_samples_random_seed}_y_tokens_{output_tokens_matching_yes}_n_tokens_{output_tokens_matching_no}",
+        "random_seed": -1,
+        "gpu_ids": [],
+        "trainer_checkpoint": "",
+        "epochs": 101,
+        "validate_every": 10,
+        "outputs_dir": "outputs/persona/olmo1b_base_{objective}_no_vs_never",
+        "disable_console_log": true,
+        "save_logs": true,
+        "train_batch_log_interval": -1,
+        "epoch_log_interval": 10,
+        "save_metric_plots": true,
+        "save_every_num_val": 10,
+        "use_tensorboard": false,
+        "use_wandb": false,
+        "wandb_resume_path": "",
+        "wandb_project_name": "persona_likelihood_displacement",
+        "wandb_entity_name": "",
+        "wandb_track_model": null,
+        "wandb_exclude_files": [
+          "plots/**"
+        ],
+        "score_metric_name": "train loss",
+        "is_train_metric": true,
+        "score_largest": false,
+        "return_best_score": false,
+        "save_checkpoints": false,
+        "num_checkpoints": 1,
+        "save_checkpoints_by_score": false,
+        "early_stop": false,
+        "early_stop_min_delta": 0,
+        "early_stop_patience": 0,
+        "early_stop_cooldown": 0,
+        "early_stop_restore_best_weights": false,
+        "dataset": "data_files/persona/ends-justify-means.jsonl",
+        "num_train_samples": 1,
+        "answer_matching_behavior_to_use": "Yes",
+        "train_samples_random_seed": -1,
+        "batch_size": -1,
+        "output_tokens_matching_yes": [
+          "No"
+        ],
+        "output_tokens_matching_no": [
+          "Never"
+        ],
+        "load_dataset_to_gpu": true,
+        "model": "allenai/OLMo-1B-hf",
+        "model_cache_dir": null,
+        "load_model_checkpoint": null,
+        "is_lora_checkpoint": false,
+        "use_lora": false,
+        "lora_rank": 8,
+        "kl_coeff": 0.1,
+        "objective": "dpo",
+        "optimizer": "rmsprop",
+        "lr": 1e-7,
+        "track_logits_for_tokens": [],
+        "log_top_token_logit_change_interval": 50,
+        "save_model": false,
+        "save_finegrained_token_metrics": true
+      },
+      "options": {
+        "train_samples_random_seed": [
+          9773,
+          5290,
+          8767,
+          9818,
+          7596,
+          344,
+          2701,
+          3298,
+          7834,
+          6327
+        ]
+      }
+    }
+  ]
+}

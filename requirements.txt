@@ -1,0 +1,15 @@
+matplotlib
+numpy
+scikit-learn
+scipy
+wandb
+tabulate
+transformers
+tokenizers
+datasets
+peft
+accelerate
+absl-py
+tyro
+jsonlines
+llm-blender
