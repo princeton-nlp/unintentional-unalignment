@@ -1,6 +1,6 @@
 # Unintentional Unalignment: Likelihood Displacement in Direct Preference Optimization
 
-[[Paper]()]
+[[Paper](https://arxiv.org/abs/2410.08847)]
 
 Official implementation based on the [PyTorch](https://pytorch.org/) and [Hugging Face Transformers](https://huggingface.co/docs/transformers/index)
 libraries.
@@ -351,7 +351,7 @@ For citing the paper you can use:
 @article{razin2024unintentional
   title={Unintentional Unalignment: Likelihood Displacement in Direct Preference Optimization},
   author={Razin, Noam and Malladi, Sadhika and Bhaskar, Adityha and Chen, Danqi and Arora, Sanjeev and Hanin, Boris},
-  journal={},
+  journal={arXiv preprint arXiv:2410.08847},
   year={2024}
 }
 ```
