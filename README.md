@@ -348,9 +348,9 @@ Run the same command as [above](#dpo-over-the-original-generated-dataset), while
 For citing the paper you can use:
 
 ```
-@article{razin2024unintentional
+@article{razin2024unintentional,
   title={Unintentional Unalignment: Likelihood Displacement in Direct Preference Optimization},
-  author={Razin, Noam and Malladi, Sadhika and Bhaskar, Adityha and Chen, Danqi and Arora, Sanjeev and Hanin, Boris},
+  author={Razin, Noam and Malladi, Sadhika and Bhaskar, Adithya and Chen, Danqi and Arora, Sanjeev and Hanin, Boris},
   journal={arXiv preprint arXiv:2410.08847},
   year={2024}
 }
