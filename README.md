@@ -1,6 +1,6 @@
 # Unintentional Unalignment: Likelihood Displacement in Direct Preference Optimization
 
-[[Paper](https://arxiv.org/abs/2410.08847)]
+[[Paper](https://arxiv.org/abs/2410.08847)] (ICLR 2025)
 
 Official implementation based on the [PyTorch](https://pytorch.org/) and [Hugging Face Transformers](https://huggingface.co/docs/transformers/index)
 libraries.
@@ -348,10 +348,10 @@ Run the same command as [above](#dpo-over-the-original-generated-dataset), while
 For citing the paper you can use:
 
 ```
-@article{razin2024unintentional,
+@inproceedings{razin2025unintentional,
   title={Unintentional Unalignment: Likelihood Displacement in Direct Preference Optimization},
   author={Razin, Noam and Malladi, Sadhika and Bhaskar, Adithya and Chen, Danqi and Arora, Sanjeev and Hanin, Boris},
-  journal={arXiv preprint arXiv:2410.08847},
-  year={2024}
+  booktitle={International Conference on Learning Representations},
+  year={2025}
 }
 ```
