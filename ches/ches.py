@@ -34,15 +34,16 @@ def compute_ches_scores(preferred_hidden_embeddings: torch.Tensor, dispreferred_
     preferred_hidden_embeddings = preferred_hidden_embeddings[:, :-1]
     dispreferred_hidden_embeddings = dispreferred_hidden_embeddings[:, :-1]
 
-    sum_preferred_embeddings = preferred_hidden_embeddings.sum(dim=1)
-    sum_dispreferred_embeddings = dispreferred_hidden_embeddings.sum(dim=1)
-
     if not length_normalize:
+        sum_preferred_embeddings = preferred_hidden_embeddings.sum(dim=1)
+        sum_dispreferred_embeddings = dispreferred_hidden_embeddings.sum(dim=1)
         return (sum_preferred_embeddings * sum_dispreferred_embeddings).sum(dim=1) - torch.norm(sum_preferred_embeddings, dim=1) ** 2
 
     preferred_lengths = preferred_hidden_embeddings.shape[1] - preferred_last_prompt_token_indices
     dispreferred_lengths = dispreferred_hidden_embeddings.shape[1] - dispreferred_last_prompt_token_indices
+    mean_preferred_embeddings = (preferred_hidden_embeddings / preferred_lengths.unsqueeze(1).unsqueeze(2)).sum(dim=1)
+    mean_dispreferred_embeddings = (dispreferred_hidden_embeddings / dispreferred_lengths.unsqueeze(1).unsqueeze(2)).sum(dim=1)
 
-    pref_dispref = (sum_preferred_embeddings * sum_dispreferred_embeddings).sum(dim=1) / (preferred_lengths * dispreferred_lengths)
-    pref_only = torch.norm(sum_preferred_embeddings, dim=1) ** 2 / (preferred_lengths ** 2)
+    pref_dispref = (mean_preferred_embeddings * mean_dispreferred_embeddings).sum(dim=1)
+    pref_only = torch.norm(mean_preferred_embeddings, dim=1) ** 2
     return pref_dispref - pref_only
